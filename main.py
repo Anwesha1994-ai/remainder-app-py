@@ -13,6 +13,10 @@ def createframe(s):
     window.config(background= "black",pady=10)
     return window
 
+def start_thread(hr_start,min_start,hr_end,min_end,_goal,hrstart,hrend,minstart,minend,goal,user):
+    t2=Thread(target=hclicked,args=(hr_start,min_start,hr_end,min_end,_goal,hrstart,hrend,minstart,minend,goal,user,))
+    t2.start()
+
 def tick():
     time_string=time.strftime("%H:%M:%S")
     clock.config(text="Current time:- "+time_string)
